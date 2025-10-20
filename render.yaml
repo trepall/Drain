@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: cherry-deals-bot
+    env: python
+    pythonVersion: 3.11.16
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: GROUP_CHAT_ID
+        sync: false
+      - key: PORT
+        sync: false
+      - key: RENDER_EXTERNAL_URL
+        sync: true
